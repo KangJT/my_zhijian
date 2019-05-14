@@ -59,8 +59,9 @@ export default {
     }
   },
   methods: {
+    // 点击事件  监听对应的click事件
     clickHandler () {
-      // this.$emit('click')
+      this.$emit('click')
     }
   }
 }

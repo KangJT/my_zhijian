@@ -10,9 +10,10 @@
       <div class="swiper">
         <Swiper/>
       </div>
+     <nut-button type="actived"  color="red"  @click="clickHandler">切换 </nut-button>
      <tabs @change="tabChange" class="active-list">
         <tab-pane label="热卖商品">
-          <ArtileList :list="list" />
+          <ArtileList :list="list" :isStyleControl="isStyleControl" />
         </tab-pane>
         <tab-pane label="店家推荐">
           <ArtileList :list="list"/>
@@ -34,10 +35,14 @@ export default {
   methods: {
     tabChange (index) {
       console.log(index)
+    },
+    clickHandler () {
+      this.isStyleControl = !this.isStyleControl
     }
   },
   data () {
     return {
+      isStyleControl: false,
       title: ' 请选择配送地址',
       item: '\ue619',
       list: [

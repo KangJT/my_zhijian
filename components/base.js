@@ -4,6 +4,7 @@ import ArtileList from './artileList/index'
 import NutButton from './Buttons/index'
 import NutIcon from './icon/index.vue'
 import {Tabs, TabPane} from './tabbar/index'
+import {List, ListItem} from './list/index.js'
 import Sticky from './sticky/index.vue'
 import SvgIcon from './SvgIcon/index.vue'
 import addTitle from './ptitle/index.vue'
@@ -19,7 +20,9 @@ const Components = {
   Sticky,
   SvgIcon,
   addTitle,
-  ShopName
+  ShopName,
+  List,
+  ListItem
 }
 export default {
   install (Vue) {

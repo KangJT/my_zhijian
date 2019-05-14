@@ -5,22 +5,24 @@
         v-for="(item, index) in list"
         :key="index"
         :items="item"
+        :isStyleControl="isStyleControl"
       >
       </list-item>
     </list>
   </div>
 </template>
 <script>
-import {List, ListItem} from '../list/index.js'
 export default {
   props: {
     list: {
       type: Array,
       default: () => []
+    },
+    isStyleControl: {
+      type: Boolean
     }
   },
   components: {
-    List, ListItem
   },
   data () {
     return {

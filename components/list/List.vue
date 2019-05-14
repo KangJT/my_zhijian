@@ -12,18 +12,7 @@ export default {
 }
 </script>
 <style scoped lang="scss">
- .component-list{
-   margin-bottom:44px;
-   a{
-     width: 100%;
-     display: inline-block;
-   }
-   .list-item{
-     @include border1px(bottom);
-     overflow: hidden;
-     &:after{
-       left: 10px;
-     }
-   }
+.component-list{
+   margin-bottom:80px;
  }
  </style>

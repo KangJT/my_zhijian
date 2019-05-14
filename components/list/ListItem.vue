@@ -1,16 +1,15 @@
 <template>
-<a href="javascript:;" class="list-item">
-      <div class='list-list'>
+<a href="javascript:;" class="list-item" @click="gotopage">
+      <div :class='isStyleControl? "list-list" :"list-style"'>
         <ul>
           <li>
-            <!-- // @click="gotopage" -->
             <div class="list-img"></div>
             <div class="list-content">
               <h3>猫掌柜梅花软糖包邮糖果混合口味喜糖批发零食果汁qq糖1000g</h3>
               <p>规格：1000G</p>
               <div class="add-specifications">
                 <em>{{items.price}}</em>
-                <span>+</span>
+                <nut-button  color="green" class="span" @click="clickHandler"> + </nut-button>
               </div>
             </div>
           </li>
@@ -30,18 +29,39 @@ export default {
     title: {
       type: String,
       default: ''
+    },
+    isStyleControl: {
+      type: Boolean
     }
   },
   methods: {
     gotopage () {
-
+      this.$router.push({
+        path: '/goods/detail'
+      })
+    },
+    clickHandler () {
+      console.log('aaa')
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.component-list{
+   margin-bottom:80px;
+   width: 100%;
+   display: flex;
+   .list-item{
+     overflow: hidden;
+     &:after{
+       left: 10px;
+     }
+   }
+ }
 .list-list{
+   width: 100%;
+   display: inline-block;
    font-size: $font-size-xxxxl;
   ul li{
     @include wh (100%,auto);
@@ -66,16 +86,16 @@ export default {
       }
       p{
         color: #333333;
-         font-size:$font-size-xxxxl;
+        font-size:$font-size-xxxxl;
       }
       .add-specifications{
         display: flex;
         justify-content: space-between;
         em{
-           color: $color-warning;
+          color: $color-warning;
           font-size:$font-size-xxxxxl;
         }
-        span{
+        .span{
           // react-native naturte
          @include wh (50px,50px);
           text-align: center;
@@ -93,14 +113,17 @@ export default {
   background: #000;
   font-size:$font-size-m;
   height: auto;
+  display: flex;
+  width: 50%;
+  display: inline-block;
   ul{
+    width: 100%;
     background: yellow;
     li{
-      @include wh (50%,250px);
-      padding: 10px 15px;
+      padding: 20px 30px;
       box-sizing: border-box;
       .list-img{
-        @include wh (100%,130px);
+        @include wh (100%,250px);
         margin: 0 auto;
         background: red;
       }
@@ -108,8 +131,8 @@ export default {
         padding: 0;
         line-height:$font-size-s;
         h3{
-          font-size:  $font-size-m;
-          line-height:$font-size-xxl;
+          font-size:  $font-size-xxxl;
+          line-height:$font-size-xxxxxl;
         }
       }
     }
@@ -124,30 +147,30 @@ export default {
   justify-content: space-between;
   h3{
     color:#000;
-    line-height: 20px;
   }
   p{
     color:#cdcdcd;
     display: flex;
     align-items: center;
     font-size: $font-size-m;
-    line-height:24px;
+    line-height:48px;
   }
   .add-specifications{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     em{
       color:$color-success;
- font-size: $font-size-l;
-      font-size: 16px;
+      font-size: 32px;
     }
-    span{
-      width: 25px;
-      height: 25px;
+    .span{
+       width: 50px;
+      height: 50px;
       text-align: center;
-      line-height: 25px;
+      line-height: 50px;
       background: $color-success;
       color: #fff;
+      font-size: 30px;
       border-radius:3px;
     }
   }

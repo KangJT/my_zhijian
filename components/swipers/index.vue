@@ -1,6 +1,6 @@
 <template>
   <div class="swiper-conect">
-     sss
+    <slot></slot>
   </div>
 </template>
 <script>

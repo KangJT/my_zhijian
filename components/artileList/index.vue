@@ -19,7 +19,8 @@ export default {
       default: () => []
     },
     isStyleControl: {
-      type: Boolean
+      type: Boolean,
+      default: true
     }
   },
   components: {

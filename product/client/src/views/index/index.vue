@@ -42,7 +42,7 @@ export default {
   },
   data () {
     return {
-      isStyleControl: false,
+      isStyleControl: true,
       title: ' 请选择配送地址',
       item: '\ue619',
       list: [

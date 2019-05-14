@@ -1,6 +1,7 @@
 <template>
   <div class="swiper-conect">
-    <slot></slot>
+    轮播头啊啊啊啊啊
+    <!-- <slot></slot> -->
   </div>
 </template>
 <script>
